@@ -20,6 +20,8 @@ enum State {
 }
 
 class ColumnDefinition {
+    private static readonly columns: ColumnDefinition[] = [];
+
     static readonly Test = new ColumnDefinition({
         header: 'Test',
         key: 'test'
@@ -34,8 +36,6 @@ class ColumnDefinition {
         header: 'Error',
         key: 'error'
     });
-
-    private static readonly columns: ColumnDefinition[] = [];
 
     private constructor(public readonly definition: Required<Pick<Column, "header" | "key">> & Partial<Pick<Column, "width">>) {
         ColumnDefinition.columns.push(this);
