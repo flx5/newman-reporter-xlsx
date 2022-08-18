@@ -30,6 +30,7 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: npm ci
+      - run: npm run build
       
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.9.7
